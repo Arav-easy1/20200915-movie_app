@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Movie from "./Movie";
+import "./App.css";
 
 // function component는 function이고 뭔가를 return함. 그리고 screen에 표시 됨.
 // class component는 class임. react component로부터 확장되고 screen에 표시 됨.
@@ -35,10 +36,14 @@ class App extends React.Component {
   render() {
     const { isLoading, movies } = this.state;
     return (
-      <div>
-        {isLoading
-          ? "Loading..."
-          : movies.map((movie) => (
+      <section class="container">
+        {isLoading ? (
+          <div class="loader">
+            <span class="loader_text">Loading...</span>
+          </div>
+        ) : (
+          <div class="movies">
+            {movies.map((movie) => (
               <Movie
                 key={movie.id}
                 id={movie.id}
@@ -48,7 +53,9 @@ class App extends React.Component {
                 poster={movie.medium_cover_image}
               />
             ))}
-      </div>
+          </div>
+        )}
+      </section>
     );
   }
 }
