@@ -20,7 +20,7 @@ function App() {
       {/* Route에 exact={true}를 넣으면, url path가 딱 /일때만 render된다. */}
       <Route path="/" exact={true} component={Home} />
       <Route path="/about" component={About} />
-      <Route path="/movie-detail" component={Detail} />
+      <Route path="/movie/:id" component={Detail} />
     </HashRouter>
     // 만약 footer가 있다면 이 위치에 <footer></footer>를 넣으면 됨.
   );
