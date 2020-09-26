@@ -2,6 +2,7 @@ import React from "react";
 import { HashRouter, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import About from "./routes/About";
+import Detail from "./routes/Detail";
 import "./App.css";
 import Navigation from "./components/Navigation";
 
@@ -19,6 +20,7 @@ function App() {
       {/* Route에 exact={true}를 넣으면, url path가 딱 /일때만 render된다. */}
       <Route path="/" exact={true} component={Home} />
       <Route path="/about" component={About} />
+      <Route path="/movie-detail" component={Detail} />
     </HashRouter>
     // 만약 footer가 있다면 이 위치에 <footer></footer>를 넣으면 됨.
   );
